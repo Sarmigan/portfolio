@@ -6,7 +6,7 @@ export async function GET(){
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        grant_type: 'refresh_token',
+        grant_type: "refresh_token",
         refresh_token: process.env.SPOTIFY_REFRESH_TOKEN,
         client_id: process.env.SPOTIFY_CLIENT_ID
       })

@@ -1,5 +1,7 @@
 export async function GET() {
-    var res = await fetch(`http://localhost:3000/api/spotify/token`);
+    var res = await fetch("http://localhost:3000/api/spotify/token",{ 
+        next: { revalidate: 3600 },
+    });
 
     var data = await res.json()
 

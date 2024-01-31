@@ -13,6 +13,7 @@ const config: Config = {
       },
       fontFamily: {
         "fira-code": ["Fira Code", "monospace"],
+        "rubik": ["Rubik", "sans-serif"],
       },
       animation: {
         caret: "blink 1s steps(11) infinite 2s",
