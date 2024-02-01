@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from "next/link";
 
-export default function Nav() {
+export default function Menu() {
     let [open, setOpen] = useState(false)
 
     return (

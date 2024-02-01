@@ -1,4 +1,4 @@
-import Nav from "@/components/Nav";
+import Menu from "@/components/menu";
 import { Typewriter } from "nextjs-simple-typewriter";
 
 async function getToken(){
@@ -70,7 +70,7 @@ export default async function Page() {
                     </div>
                 ))}
             </div>
-            <Nav/>
+            <Menu/>
         </div>
     );
 }
