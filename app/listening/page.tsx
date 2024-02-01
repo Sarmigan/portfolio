@@ -1,3 +1,4 @@
+import Nav from "@/components/Nav";
 import { Typewriter } from "nextjs-simple-typewriter";
 
 async function getToken(){
@@ -11,7 +12,8 @@ async function getToken(){
         grant_type: "refresh_token",
         refresh_token: process.env.SPOTIFY_REFRESH_TOKEN,
         client_id: process.env.SPOTIFY_CLIENT_ID
-      })
+      }),
+      next: { revalidate: 3600 },
     });
 
     const data = await res.json()
@@ -29,6 +31,7 @@ async function getTopArtists() {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
+        next: { revalidate: 30 },
     });
 
     data = await res.json()
@@ -67,6 +70,7 @@ export default async function Page() {
                     </div>
                 ))}
             </div>
+            <Nav/>
         </div>
     );
 }
