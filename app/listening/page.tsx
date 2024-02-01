@@ -1,8 +1,43 @@
-import Menu from "@/components/Menu";
 import { Typewriter } from "nextjs-simple-typewriter";
 
+async function getToken(){
+    const res = await fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString("base64")}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        grant_type: "refresh_token",
+        refresh_token: process.env.SPOTIFY_REFRESH_TOKEN,
+        client_id: process.env.SPOTIFY_CLIENT_ID
+      })
+    });
+
+    const data = await res.json()
+    
+    return Response.json({ data })
+}
+
+async function getTopArtists() {
+    var res = await getToken()
+    var data = await res.json()
+
+    const access_token = data.data.access_token
+
+    res = await fetch("https://api.spotify.com/v1/me/top/artists?" + new URLSearchParams({time_range: "short_term", limit: "50"}), { 
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+    });
+
+    data = await res.json()
+
+    return Response.json({ data })
+}
+
 export default async function Page() {
-    const res = await fetch("http://localhost:3000/api/spotify/topartists", { next: { revalidate: 86400 } })
+    const res = await getTopArtists()
     const data = await res.json()
 
     return (
@@ -32,7 +67,6 @@ export default async function Page() {
                     </div>
                 ))}
             </div>
-            <Menu/>
         </div>
     );
 }

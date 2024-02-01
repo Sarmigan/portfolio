@@ -1,4 +1,3 @@
-import Menu from '@/components/Menu';
 import { Typewriter } from 'nextjs-simple-typewriter'
 
 export default function Home(){
@@ -19,7 +18,6 @@ export default function Home(){
         <a className="font-fira-code text-xs xl:text-xl mx-2 xl:mx-4 hover:underline underline-offset-3" href="https://www.linkedin.com/in/sarmigan/">LinkedIn</a>
         <a className="font-fira-code text-xs xl:text-xl mx-2 xl:mx-4 hover:underline underline-offset-3" href="https://github.com/Sarmigan">GitHub</a>
       </div>
-      <Menu />
     </div>
   );
 }
