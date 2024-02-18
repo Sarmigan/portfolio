@@ -5,11 +5,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     display: none;
 }
 
-body {
+* {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    user-select: none;
+}
+
+body {
+    background: white;
+}
+  
+.dark body {
+    background: #191919;
 }

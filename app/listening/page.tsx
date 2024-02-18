@@ -1,5 +1,6 @@
 import Menu from "@/components/menu";
 import { Typewriter } from "nextjs-simple-typewriter";
+import ThemeSwitcher from "@/components/theme-switcher";
 
 async function getToken(){
     const res = await fetch("https://accounts.spotify.com/api/token", {
@@ -46,7 +47,6 @@ export default async function Page() {
     return (
         <div>
             <div className="flex flex-col justify-center items-center h-20">
-                <span id="music_typewriter" className="text-lg xl:text-4xl font-fira-code text-center"></span>
                 <span className="text-lg xl:text-4xl font-fira-code text-center">
                 <Typewriter
                     words={["artists i've been listening to"]}
@@ -71,6 +71,7 @@ export default async function Page() {
                 ))}
             </div>
             <Menu/>
+            <ThemeSwitcher/>
         </div>
     );
 }

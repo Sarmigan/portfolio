@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "dark-background": "#191919",
+      },
       fontFamily: {
         "fira-code": ["Fira Code", "monospace"],
         "rubik": ["Rubik", "sans-serif"],
@@ -15,6 +18,7 @@ const config: Config = {
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
 
 export default config;

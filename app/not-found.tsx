@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Menu from "@/components/menu"
+import ThemeSwitcher from "@/components/theme-switcher"
 import { Typewriter } from "nextjs-simple-typewriter"
 
 export default function NotFound() {
@@ -13,9 +14,8 @@ export default function NotFound() {
             cursorBlinking={true}
         />
         </span>
-        <div className="mt-5">
-            <Link className="font-fira-code text-xs xl:text-xl hover:underline underline-offset-3" href="/">home</Link>
-        </div>
+        <Menu/>
+        <ThemeSwitcher/>
     </div>
   )
 }
