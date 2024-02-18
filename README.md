@@ -1,3 +1,6 @@
-### Portfolio site
+<div align="center">
 
-The codebase for my portfolio site!
+# Portfolio Site
+Welcome to my portfolio site! This project is built using Next.js.
+
+</div>
