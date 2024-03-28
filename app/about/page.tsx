@@ -65,7 +65,7 @@ export default async function Page() {
                 </p>
             </div>
             <div className="my-6 w-[240px] xl:w-[720px]">
-                <p className="text-[11px] xl:text-lg font-fira-code">- my favourite artists of this month:</p>
+                <p className="text-[11px] xl:text-lg font-fira-code">my favourite artists of the month:</p>
                 <div className="mt-5 ml-5 xl:ml-0">
                     <ArtistBox data={data.data}></ArtistBox>
                 </div>

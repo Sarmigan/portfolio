@@ -1,5 +1,11 @@
 version: 0.2
-        
+
+env:
+  shell: shell-tag
+  parameter-store:
+    SPOTIFY_CLIENT_ID: "/prod/portfolio/spotify/SPOTIFY_CLIENT_ID"
+    SPOTIFY_CLIENT_SECRET: "/prod/portfolio/potify/SPOTIFY_CLIENT_SECRET"
+    SPOTIFY_REFRESH_TOKEN: "/prod/portfolio/spotify/SPOTIFY_REFRESH_TOKEN"
 phases:
   install:
     on-failure: ABORT
