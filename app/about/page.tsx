@@ -1,6 +1,7 @@
 import Menu from "@/components/menu";
-import { Typewriter } from "nextjs-simple-typewriter";
 import ThemeSwitcher from "@/components/theme-switcher";
+import ArtistBox from "@/components/artist-box";
+import { Typewriter } from "nextjs-simple-typewriter";
 
 async function getToken(){
     const res = await fetch("https://accounts.spotify.com/api/token", {
@@ -32,7 +33,7 @@ async function getTopArtists() {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
-        next: { revalidate: 30 },
+        next: { revalidate: 3600 },
     });
 
     data = await res.json()
@@ -43,13 +44,14 @@ async function getTopArtists() {
 export default async function Page() {
     const res = await getTopArtists()
     const data = await res.json()
+    const age = Math.abs(new Date(Date.now() - new Date(2001, 11, 8).getTime()).getUTCFullYear() - 1970)
 
     return (
-        <div>
-            <div className="flex flex-col justify-center items-center h-20">
-                <span className="text-lg xl:text-4xl font-fira-code text-center">
+        <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center h-16 xl:h-20">
+                <span className="text-2xl xl:text-5xl font-fira-code text-center">
                 <Typewriter
-                    words={["artists i've been listening to"]}
+                    words={["about"]}
                     loop={1}
                     cursor={true}
                     cursorStyle='_'
@@ -57,18 +59,16 @@ export default async function Page() {
                 />
                 </span>
             </div>
-            <div className="flex flex-col justify-center items-center">
-                {data.data.items.map((artist: any, index: any) => (
-                    <div key={index} className="m-12 flex-col flex items-center justify-center duration-200">
-                        <img
-                            key={`img-${index}`} 
-                            className="max-w-48 xl:max-w-72 rounded shadow-lg"
-                            src={artist.images[0].url}
-                            alt={artist.name}
-                        />
-                        <p key={`artist-${index}`}  className="font-fira-code text-xs xl:text-lg mt-2">{index+1}. {artist.name}</p>
-                    </div>
-                ))}
+            <div className="my-6 w-[240px] xl:w-[720px]">
+                <p className="text-[11px] xl:text-lg font-fira-code">
+                    hi, i&apos;m sarmigan! i am a {age} year old who enjoys everything computing related: programming, artificial intelligence, networking, cybersecurity, cloud engineering, etc. i&apos;m also an aspiring musician.
+                </p>
+            </div>
+            <div className="my-6 w-[240px] xl:w-[720px]">
+                <p className="text-[11px] xl:text-lg font-fira-code">- my favourite artists of this month:</p>
+                <div className="mt-5 ml-5 xl:ml-0">
+                    <ArtistBox data={data.data}></ArtistBox>
+                </div>
             </div>
             <Menu/>
             <ThemeSwitcher/>
