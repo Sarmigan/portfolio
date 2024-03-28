@@ -17,16 +17,13 @@ phases:
     on-failure: ABORT
     commands:
       - echo Preparing for build...
-      - echo $SPOTIFY_CLIENT_ID
-      - echo $SPOTIFY_CLIENT_SECRET
-      - echo $SPOTIFY_REFRESH_TOKEN
   build:
     on-failure: ABORT
     commands:
       - echo Building Next.js app…
       - npm run build
       - echo Building Docker image…
-      - docker build . -t portfolio --build-arg SPOTIFY_CLIENT_ID=${} --build-arg SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET} --build-arg SPOTIFY_REFRESH_TOKEN=${SPOTIFY_REFRESH_TOKEN}
+      - docker build . -t portfolio -e SPOTIFY_CLIENT_ID=$SPOTIFY_CLIENT_ID -e SPOTIFY_CLIENT_SECRET=$SPOTIFY_CLIENT_SECRET -e SPOTIFY_REFRESH_TOKEN=$SPOTIFY_REFRESH_TOKEN
   post_build:
     on-failure: ABORT
     commands:
