@@ -25,12 +25,14 @@ interface Image{
 export default function Artist(props: { item: Item, index: number, setArtist: (artist: string | null | undefined) => void }){
     return(
         <div key={props.index} className="flex hover:scale-110 duration-200" onMouseLeave={()=>props.setArtist(null)} onMouseOver={()=>props.setArtist(props.item.name)}>
-            <img
-                key={`img-${props.index}`}
-                className="w-8 xl:w-16 rounded shadow-lg"
-                src={props.item.images[0].url}
-                alt={props.item.name}
-            />
+            <a href={props.item.external_urls.spotify}>
+                <img
+                    key={`img-${props.index}`}
+                    className="w-8 xl:w-16 rounded shadow-lg"
+                    src={props.item.images[0].url}
+                    alt={props.item.name}
+                />
+            </a>
         </div>
     )
 }
