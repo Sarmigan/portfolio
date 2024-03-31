@@ -61,7 +61,7 @@ export default async function Page() {
             </div>
             <div className="my-6 w-[240px] xl:w-[720px]">
                 <p className="text-[11px] xl:text-lg font-fira-code">
-                    hi, i&apos;m sarmigan! i am a {age} year old who enjoys everything computing related: programming, artificial intelligence, networking, cybersecurity, cloud engineering, etc. i&apos;m also an aspiring musician.
+                    hi, i&apos;m sarmigan! i am a {age} year old who enjoys everything computing related: programming, artificial intelligence, networking, cybersecurity, cloud engineering, etc. i also enjoy making music in my free time!
                 </p>
             </div>
             <div className="my-6 w-[240px] xl:w-[720px]">
