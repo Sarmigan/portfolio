@@ -35,8 +35,6 @@ COPY . .
 # If using npm comment out above and use below instead
 RUN npm run build
 
-RUN ls -a
-
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
@@ -48,7 +46,7 @@ ENV NODE_ENV production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY --from=builder app/public ./public
+# COPY --from=builder app/public ./public
 
 # Set the correct permission for prerender cache
 RUN mkdir .next
