@@ -4,10 +4,6 @@ ARG SPOTIFY_CLIENT_ID
 ARG SPOTIFY_CLIENT_SECRET
 ARG SPOTIFY_REFRESH_TOKEN
 
-ENV SPOTIFY_CLIENT_ID=$SPOTIFY_CLIENT_ID
-ENV SPOTIFY_CLIENT_SECRET=$SPOTIFY_CLIENT_SECRET
-ENV SPOTIFY_REFRESH_TOKEN=$SPOTIFY_REFRESH_TOKEN
-
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
