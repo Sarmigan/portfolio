@@ -1,6 +1,4 @@
-import Menu from '@/components/menu';
 import { Typewriter } from 'nextjs-simple-typewriter'
-import ThemeSwitcher from '@/components/theme-switcher';
 
 export default function Home(){
   return (
@@ -20,8 +18,6 @@ export default function Home(){
         <a className="font-fira-code text-xs xl:text-xl mx-2 xl:mx-4 hover:underline underline-offset-3" href="https://www.linkedin.com/in/sarmigan/">LinkedIn</a>
         <a className="font-fira-code text-xs xl:text-xl mx-2 xl:mx-4 hover:underline underline-offset-3" href="https://github.com/Sarmigan">GitHub</a>
       </div>
-      <Menu/>
-      <ThemeSwitcher/>
     </div>
   );
 }

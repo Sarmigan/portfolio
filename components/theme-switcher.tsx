@@ -14,9 +14,16 @@ export default function ThemeSwitcher() {
         return null
     }
 
+    return(
+        <div className='flex float-left justify-center items-center m-4 w-7 h-7'>
+            {theme === "dark" ? <div className="w-2 xl:w-2 h-2 xl:h-2 bg-white rounded-full cursor-pointer" onClick={() => setTheme('light')}></div> : <div className="w-2 xl:w-2 h-2 xl:h-2 bg-dark-background rounded-full cursor-pointer" onClick={() => setTheme('dark')}></div>}
+            
+        </div>
+    )
+
     if(theme === "dark") {
         return(
-            <div className='flex justify-center items-center fixed bottom-0 left-0 m-4 xl:m-7 w-7 xl:w-10 h-7 xl:h-10'>
+            <div className='flex absolute bottom-0 left-0 justify-center items-center m-4 xl:m-7 w-7 xl:w-10 h-7 xl:h-10'>
                 <div className="w-2 xl:w-2 h-2 xl:h-2 bg-white rounded-full cursor-pointer" onClick={() => setTheme('light')}></div>
             </div>
         )
@@ -24,8 +31,7 @@ export default function ThemeSwitcher() {
 
     if(theme === "light") {
         return(
-            <div className='flex justify-center items-center fixed bottom-0 left-0 m-4 xl:m-7 w-7 xl:w-10 h-7 xl:h-10'>
-                <div className="w-2 xl:w-2 h-2 xl:h-2 bg-dark-background rounded-full cursor-pointer" onClick={() => setTheme('dark')}></div>
+            <div className='flex absolute bottom-0 left-0 justify-center items-center m-4 xl:m-7 w-7 xl:w-10 h-7 xl:h-10'>
             </div>
         )   
     }

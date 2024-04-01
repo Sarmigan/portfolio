@@ -1,5 +1,3 @@
-import Menu from "@/components/menu"
-import ThemeSwitcher from "@/components/theme-switcher"
 import { Typewriter } from "nextjs-simple-typewriter"
 
 export default function NotFound() {
@@ -14,8 +12,6 @@ export default function NotFound() {
             cursorBlinking={true}
         />
         </span>
-        <Menu/>
-        <ThemeSwitcher/>
     </div>
   )
 }

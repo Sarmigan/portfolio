@@ -1,5 +1,3 @@
-import Menu from '@/components/menu';
-import ThemeSwitcher from '@/components/theme-switcher';
 import { Typewriter } from 'nextjs-simple-typewriter'
 
 export default function Page(){
@@ -45,8 +43,6 @@ export default function Page(){
                 <p className="text-[11px] xl:text-lg font-fira-code ml-10 xl:ml-16">- music</p>
             </div>
         </div>
-        <Menu/>
-        <ThemeSwitcher/>
     </div>
   );
 }

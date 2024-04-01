@@ -1,5 +1,3 @@
-import Menu from '@/components/menu';
-import ThemeSwitcher from '@/components/theme-switcher';
 import { Typewriter } from 'nextjs-simple-typewriter'
 
 export default function Page(){
@@ -38,8 +36,6 @@ export default function Page(){
                 <p className="text-[11px] xl:text-lg font-fira-code ml-5 xl:ml-10">worked as a part time it systems assistant. developed a full-stack application using the mern stack for a loyalty card scheme. deployed and maintained the company website through aws. installed and maintained networking hardware.</p>
             </div>
         </div>
-        <Menu/>
-        <ThemeSwitcher/>
     </div>
   );
 }
