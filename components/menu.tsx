@@ -13,7 +13,11 @@ export default function Menu() {
             <button className='items-center outline-none text-xl font-fira-code font-bold m-4 mt-0 h-7 w-7' onClick={(e)=>{setOpen(!open)}}>{open ? "-": "+"}</button>
             <AnimatePresence>
                 {open && (
-                        <motion.div className="flex flex-col justify-end items-end my-2 mx-2">
+                        <motion.div initial={{ x: 100, backgroundColor: "rgba(25, 25, 25, 0)" }}
+                                    animate={{ x: 0, backgroundColor: "rgba(25, 25, 25, 0.8)" }}
+                                    transition={{ delay: 0.125 }}
+                                    exit={{ x: 100, backgroundColor: "rgba(25, 25, 25, 0)" }}
+                                    className="flex flex-col justify-end items-end my-2 mx-2 bg-dark-background rounded-lg">
                             <motion.div initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.125 }} exit={{ x: 100, opacity: 0 }}>
                                 <Link onClick={(e)=>{setOpen(!open)}} className="text-xs xl:text-lg font-fira-code px-2 hover:underline" href="/certifications">certifications</Link>
                             </motion.div>
