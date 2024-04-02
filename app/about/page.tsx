@@ -46,8 +46,8 @@ export default async function Page() {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className="flex flex-col justify-center items-center h-16 xl:h-20">
-                <span className="text-2xl xl:text-5xl font-fira-code text-center">
+            <div className="flex flex-col justify-center items-center h-16 md:h-20">
+                <span className="text-2xl md:text-5xl font-fira-code text-center">
                 <Typewriter
                     words={["about"]}
                     loop={1}
@@ -57,14 +57,14 @@ export default async function Page() {
                 />
                 </span>
             </div>
-            <div className="my-6 w-[240px] xl:w-[720px]">
-                <p className="text-[11px] xl:text-lg font-fira-code">
-                    hi, i&apos;m sarmigan! i am a {age} year old who enjoys everything computing related: programming, artificial intelligence, networking, cybersecurity, cloud engineering, etc. i also enjoy making music in my free time!
+            <div className="my-6 w-[240px] md:w-[720px]">
+                <p className="text-[11px] md:text-lg font-fira-code">
+                    hi, i&apos;m sarmigan! a {age} year old hooked on all things tech, from programming and ai to networking and cloud engineering. beyond tech, i also enjoy making music!
                 </p>
             </div>
-            <div className="my-6 w-[240px] xl:w-[720px]">
-                <p className="text-[11px] xl:text-lg font-fira-code">my favourite artists of the month:</p>
-                <div className="mt-5 xl:ml-0">
+            <div className="my-6 w-[240px] md:w-[720px]">
+                <p className="text-[11px] md:text-lg font-fira-code">my favourite artists of the month:</p>
+                <div className="mt-5 md:ml-0">
                     <ArtistBox data={data.data}></ArtistBox>
                 </div>
             </div>

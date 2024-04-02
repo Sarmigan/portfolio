@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 interface Item{
     external_urls: {
         spotify: string
@@ -24,15 +26,15 @@ interface Image{
 
 export default function Artist(props: { item: Item, index: number, setArtist: (artist: string | null | undefined) => void }){
     return(
-        <div key={props.index} className="flex hover:scale-110 duration-200" onMouseLeave={()=>props.setArtist(null)} onMouseOver={()=>props.setArtist(props.item.name)}>
-            <a href={props.item.external_urls.spotify}>
+        <div key={props.index} className="hover:scale-110 duration-200" onMouseLeave={()=>props.setArtist(null)} onMouseOver={()=>props.setArtist(props.item.name)}>
+            <Link target="_blank" href={props.item.external_urls.spotify}>
                 <img
                     key={`img-${props.index}`}
-                    className="w-8 xl:w-16 rounded shadow-lg"
+                    className="rounded shadow-lg"
                     src={props.item.images[0].url}
                     alt={props.item.name}
                 />
-            </a>
+            </Link>
         </div>
     )
 }

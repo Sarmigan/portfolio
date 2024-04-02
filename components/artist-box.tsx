@@ -44,13 +44,13 @@ export default function ArtistBox(props: {data: Data}){
     return(
         <div className="flex flex-col">
             <div className="">
-                <div className="grid grid-cols-5 xl:grid-cols-10 gap-1 xl:gap-1 justify-center items-center">
+                <div className="grid grid-cols-5 md:grid-cols-10 gap-1 justify-center items-center">
                     {props.data.items.map((item: Item, index: number) => (
                         Artist({item, index, setArtist})
                     ))}
                 </div>
             </div>
-            <p className="mx-5 text-[11px] xl:text-lg font-fira-code mt-5 text-center">{artist}</p>
+            <p className="mx-5 text-[11px] md:text-lg font-fira-code mt-5 h-6 text-center">{artist}</p>
         </div>
     )
 }
